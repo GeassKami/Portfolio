@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Suraj Anil Suryawanshi — Engineering Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:   #0B1F3A;
+  --navy2:  #132D52;
+  --blue:   #1B4F8A;
+  --blue2:  #2B6CB0;
+  --gold:   #B8860B;
+  --gold2:  #D4A017;
+  --gold-lt:#FDF6E3;
+  --green:  #1E5C3A;
+  --green-lt:#E8F5EE;
+  --paper:  #F4F7FB;
+  --white:  #FFFFFF;
+  --ink:    #0D1B2A;
+  --muted:  #5A6C7D;
+  --border: #D0D9E4;
+  --teal:   #17637A;
+  --teal-lt:#E4F4F9;
+  --serif:  'Source Serif 4', Georgia, serif;
+  --sans:   'Source Sans 3', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.65; }
+
+/* ─── HERO ─────────────────────────────────────────────────────── */
+.hero {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 5rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(135deg, transparent 30%, rgba(27,79,138,0.25) 100%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-credential {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--gold2);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.hero-tagline {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+.pill {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.06);
+  letter-spacing: 0.04em;
+}
+.hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; max-width: 560px; }
+.stat-block { }
+.stat-val { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--gold2); line-height: 1; }
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 3px; }
+.hero-contact {
+  margin-top: 2rem;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.45);
+}
+.hero-contact a { color: rgba(255,255,255,0.55); text-decoration: none; }
+
+/* ─── LAYOUT ───────────────────────────────────────────────────── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section-title {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+.section-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* ─── IDENTITY ─────────────────────────────────────────────────── */
+.identity-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+}
+.identity-block p { font-family: var(--serif); font-size: 1.05rem; line-height: 1.8; color: var(--ink); margin-bottom: 1rem; }
+.identity-block p:last-child { margin-bottom: 0; }
+.workflow-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 1.5rem;
+}
+.wf-step { background: var(--white); padding: 1rem 1.2rem; }
+.wf-verb { font-family: var(--serif); font-size: 0.85rem; font-weight: 600; color: var(--blue); margin-bottom: 4px; }
+.wf-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+/* ─── COMPETENCY MATRIX ────────────────────────────────────────── */
+.matrix-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.matrix-table th {
+  text-align: left; padding: 10px 14px;
+  background: var(--navy);
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+}
+.matrix-table td { padding: 9px 14px; vertical-align: top; border-bottom: 1px solid var(--border); }
+.matrix-table tr:last-child td { border-bottom: none; }
+.matrix-table tr:nth-child(even) td { background: #F8FAFC; }
+.domain-tag {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 12.5px;
+  display: block;
+  margin-bottom: 2px;
+}
+.capability-list { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.tool-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 7px;
+  background: var(--teal-lt);
+  color: var(--teal);
+  border-radius: 2px;
+  margin: 1px;
+}
+
+/* ─── TABS ──────────────────────────────────────────────────────── */
+.tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 2rem;
+}
+.tab-btn {
+  font-size: 12.5px;
+  font-weight: 500;
+  font-family: var(--sans);
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--navy); }
+.tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 600; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ─── CASE STUDIES ─────────────────────────────────────────────── */
+.cs-grid { display: grid; gap: 1.5rem; }
+.cs-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  overflow: hidden;
+}
+.cs-card.gold { border-left-color: var(--gold); }
+.cs-card.green { border-left-color: var(--green); }
+.cs-card.teal { border-left-color: var(--teal); }
+.cs-header {
+  padding: 1.2rem 1.5rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.cs-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--navy); line-height: 1.35; }
+.cs-context { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.cs-chevron { font-size: 14px; color: var(--muted); flex-shrink: 0; margin-top: 2px; transition: transform 0.2s; }
+.cs-body { padding: 1.2rem 1.5rem; display: none; }
+.cs-body.open { display: block; }
+.cs-section { margin-bottom: 1rem; }
+.cs-section:last-child { margin-bottom: 0; }
+.cs-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--blue);
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.cs-label.gold { color: var(--gold); }
+.cs-label.green { color: var(--green); }
+.cs-label.teal { color: var(--teal); }
+.cs-text { font-size: 13px; color: var(--ink); line-height: 1.7; }
+.cs-text li { margin-bottom: 4px; padding-left: 4px; }
+.cs-text ul { padding-left: 1.2rem; }
+.impact-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 0.8rem;
+}
+.impact-cell { background: var(--gold-lt); padding: 0.7rem 1rem; text-align: center; }
+.impact-val { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--gold); }
+.impact-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.skills-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.chip {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--teal-lt);
+  color: var(--teal);
+  border-radius: 2px;
+}
+
+/* ─── INNOVATION ───────────────────────────────────────────────── */
+.patent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.2rem; }
+.patent-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.4rem;
+}
+.patent-status {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+.granted { background: var(--green-lt); color: var(--green); }
+.filed { background: var(--teal-lt); color: var(--teal); }
+.patent-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.4; margin-bottom: 5px; }
+.patent-body { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+/* ─── EDUCATION ────────────────────────────────────────────────── */
+.edu-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.edu-row:last-child { border-bottom: none; }
+.edu-badge {
+  min-width: 52px; height: 52px;
+  background: var(--navy2);
+  color: rgba(255,255,255,0.85);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 600; text-align: center;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+.edu-degree { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--navy); }
+.edu-inst { font-size: 13px; color: var(--blue); margin-top: 2px; }
+.edu-grade { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.cert-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+.cert-chip {
+  font-size: 12px; padding: 5px 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--ink);
+}
+
+/* ─── FOOTER ───────────────────────────────────────────────────── */
+.footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  padding: 2rem;
+  font-size: 12px;
+  font-style: italic;
+}
+.footer a { color: rgba(255,255,255,0.7); }
+
+/* ─── PRINT / RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hero { padding: 3rem 1.5rem; }
+  .container { padding: 0 1.2rem; }
+  .cs-header { gap: 0.5rem; }
+  .matrix-table { font-size: 12px; }
+  .tab-btn { font-size: 11.5px; padding: 8px 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-credential">M.Tech · IIT Bhubaneswar · CGPA 8.98 &nbsp;|&nbsp; 4+ Years Industrial Engineering</div>
+    <h1 class="hero-name">Suraj Anil<br>Suryawanshi</h1>
+    <p class="hero-tagline">Mechanical Systems Design &amp; Product Development Engineer</p>
+    <div class="hero-pills">
+      <span class="pill">NPD / NPI</span>
+      <span class="pill">FEA — ANSYS · Abaqus</span>
+      <span class="pill">CFD — ANSYS Fluent</span>
+      <span class="pill">ASME Sec VIII Div 1 &amp; 2</span>
+      <span class="pill">Pressure Equipment &amp; HX</span>
+      <span class="pill">GD&amp;T · ASME Y14.5</span>
+      <span class="pill">Python Automation</span>
+      <span class="pill">DFM/DFA · DFMEA</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-block"><div class="stat-val">100+</div><div class="stat-label">Engineering projects</div></div>
+      <div class="stat-block"><div class="stat-val">3</div><div class="stat-label">Patents (1 granted)</div></div>
+      <div class="stat-block"><div class="stat-val">20+</div><div class="stat-label">ASME/IBR/CSA certs</div></div>
+      <div class="stat-block"><div class="stat-val">₹10 Cr+</div><div class="stat-label">Cost savings documented</div></div>
+    </div>
+    <div class="hero-contact">
+      Pune, India &nbsp;·&nbsp; <a href="mailto:surajas9598@gmail.com">surajas9598@gmail.com</a> &nbsp;·&nbsp; +91 8668811380 &nbsp;·&nbsp; <a href="https://linkedin.com/in/surajas" target="_blank">linkedin.com/in/surajas</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ IDENTITY ═══════════════════ -->
+<div class="section" id="identity">
+  <div class="container">
+    <h2 class="section-title">Engineering Identity</h2>
+    <p class="section-sub">Where design, analysis, and industrialization converge</p>
+    <div class="identity-block">
+      <p>Mechanical Product Design &amp; Development Engineer with 4+ years of experience across mechanical systems, NPD/NPI, FEA, CFD, pressure equipment, precision test systems, and industrialization. I am most effective when a problem is ambiguous, technically coupled, and has to become a working, manufacturable product — not just a CAD model.</p>
+      <p>My work spans the full engineering lifecycle at Sandvik Coromant (precision manufacturing, GD&amp;T, Python automation), Forbes Marshall (R&amp;D, IoT products, ASME certification, FEA-backed design), and Kirloskar Pneumatic (compressor packages, ASME/API compliance, EIL-code documentation). I hold 1 granted patent and 2 filed, have authored 20+ ASME/IBR/CSA certification workflows, and contributed ₹10 Cr+ in documented engineering savings.</p>
+      <div class="workflow-row">
+        <div class="wf-step"><div class="wf-verb">Define</div><div class="wf-desc">Requirements · feasibility · risk assessment · benchmarking</div></div>
+        <div class="wf-step"><div class="wf-verb">Design</div><div class="wf-desc">3D CAD · GD&amp;T · DFM/DFA · tolerance engineering · design reviews</div></div>
+        <div class="wf-step"><div class="wf-verb">Analyze</div><div class="wf-desc">Structural · thermal · fatigue · CFD · Design-by-Analysis</div></div>
+        <div class="wf-step"><div class="wf-verb">Validate</div><div class="wf-desc">Prototype · test rigs · certification · experimental correlation</div></div>
+        <div class="wf-step"><div class="wf-verb">Industrialize</div><div class="wf-desc">Manufacturing · BOM/ERP · supplier dev · product release</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ COMPETENCY MATRIX ═══════════════════ -->
+<div class="section" id="competency">
+  <div class="container">
+    <h2 class="section-title">Technical Competency Matrix</h2>
+    <p class="section-sub">Consolidated across NPD, CAE/FEA, CFD, and pressure equipment domains</p>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Domain</th>
+          <th style="width:40%">Capability &amp; Experience</th>
+          <th style="width:38%">Tools &amp; Standards</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="domain-tag">Mechanical Design / NPD</span></td>
+          <td class="capability-list">GD&amp;T (ASME Y14.5) · tolerance stack-up · DFM/DFA · DFMEA/PFMEA · mechanism design · kinematics · NPD/NPI lifecycle · 40+ production-ready designs</td>
+          <td><span class="tool-tag">NX-CAD</span><span class="tool-tag">SolidEdge</span><span class="tool-tag">CATIA V5</span><span class="tool-tag">SolidWorks</span><span class="tool-tag">Creo</span><span class="tool-tag">Inventor</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-tag">Structural FEA</span></td>
+          <td class="capability-list">Linear &amp; nonlinear static · contact mechanics · bolt pre-tension · fatigue (stress-based, Goodman) · modal/dynamics · ASME DBA stress linearisation · 40+ FEA studies</td>
+          <td><span class="tool-tag">ANSYS Mechanical</span><span class="tool-tag">Abaqus Standard</span><span class="tool-tag">Abaqus/Explicit</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-tag">CFD &amp; Multiphysics</span></td>
+          <td class="capability-list">Internal flow · capacity &amp; performance · thermal/temperature · transient water hammer · one-way FSI (CFD→FEA) · aerodynamic load transfer · CFD-to-test validation</td>
+          <td><span class="tool-tag">ANSYS Fluent</span><span class="tool-tag">ANSYS Mechanical</span><span class="tool-tag">Abaqus/Explicit</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-tag">Pressure Equipment</span></td>
+          <td class="capability-list">ASME Sec VIII Div 1 &amp; 2 DBA · PV Elite calculations · WRC 107/537 nozzle loads · HTRI heat exchanger thermal design · TEMA · IBR certification · CSA B51 · 20+ certifications</td>
+          <td><span class="tool-tag">PV Elite</span><span class="tool-tag">HTRI Xist</span><span class="tool-tag">ANSYS</span><span class="tool-tag">ASME VIII</span><span class="tool-tag">IBR</span><span class="tool-tag">API 618</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-tag">Precision Test Engineering</span></td>
+          <td class="capability-list">Calibration fixture design · GR&amp;R · prototype-to-production correlation · RTD/DP transmitter integration · kinematic mounting · ±0.02 mm repeatability achieved</td>
+          <td><span class="tool-tag">GD&amp;T</span><span class="tool-tag">SolidWorks</span><span class="tool-tag">NX</span><span class="tool-tag">Instrumentation</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-tag">Digital Engineering</span></td>
+          <td class="capability-list">Python FEA post-processing · tolerance stack-up automation · engineering calculation tools · Power BI dashboards · MATLAB · Oracle ERP/BOM · 90% cycle-time reduction on targeted workflows</td>
+          <td><span class="tool-tag">Python</span><span class="tool-tag">Power BI</span><span class="tool-tag">MATLAB</span><span class="tool-tag">Oracle ERP</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-tag">Standards &amp; Compliance</span></td>
+          <td class="capability-list">ASME Y14.5 GD&amp;T · ASME Sec VIII Div 1 &amp; 2 · API 614/617/618 · IBR 1950 · CSA B51 · NACE MR0175 · TEMA · ASME B31.3 · WRC 107/537 · ASME Sec IX (WPS/PQR)</td>
+          <td><span class="tool-tag">ASME</span><span class="tool-tag">API</span><span class="tool-tag">IBR</span><span class="tool-tag">CSA</span><span class="tool-tag">NACE</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════ CASE STUDIES ═══════════════════ -->
+<div class="section" id="casestudies">
+  <div class="container">
+    <h2 class="section-title">Engineering Case Studies</h2>
+    <p class="section-sub">Selected studies across mechanical design, CAE/FEA, CFD, and test engineering — click any project to expand</p>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('npd',this)">Mechanical Design &amp; NPD</button>
+      <button class="tab-btn" onclick="showTab('fea',this)">CAE / FEA</button>
+      <button class="tab-btn" onclick="showTab('cfd',this)">CFD &amp; Multiphysics</button>
+      <button class="tab-btn" onclick="showTab('pressure',this)">Pressure Equipment</button>
+      <button class="tab-btn" onclick="showTab('test',this)">Test Engineering</button>
+      <button class="tab-btn" onclick="showTab('digital',this)">Digital &amp; Automation</button>
+    </div>
+
+    <!-- NPD TAB -->
+    <div class="tab-panel active" id="tab-npd">
+      <div class="cs-grid">
+
+        <div class="cs-card gold">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Automated Edge-Profile Metrology System for Carbide Inserts</div>
+              <div class="cs-context">Sandvik Coromant · Precision Manufacturing · NPD</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label gold">Problem</div>
+              <div class="cs-text">Manual inspection of carbide insert edge profiles created throughput constraints, measurement inconsistency, and rework loops across 40+ SKU variants. Inspection bottlenecks slowed product transfer to global manufacturing units.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Designed a modular automated gauging architecture with micro-adjust alignment stages and controlled datum referencing per GD&amp;T (ASME Y14.5)</li>
+                <li>Applied tolerance stack-up analysis across 50+ SKU variants to ensure measurement consistency</li>
+                <li>Converted manual inspection into a Python-driven digital process with Power BI analytics integration</li>
+                <li>Coordinated with global EU/Asia manufacturing units for product transfer validation</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">70%</div><div class="impact-lbl">Inspection throughput improvement</div></div>
+                <div class="impact-cell"><div class="impact-val">98%</div><div class="impact-lbl">First-time-right accuracy</div></div>
+                <div class="impact-cell"><div class="impact-val">35%</div><div class="impact-lbl">Rework reduction</div></div>
+                <div class="impact-cell"><div class="impact-val">18%</div><div class="impact-lbl">Downstream NCR reduction</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">GD&amp;T</span><span class="chip">Tolerance Stack-up</span><span class="chip">Python</span><span class="chip">Power BI</span><span class="chip">NPI</span><span class="chip">Precision Manufacturing</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Reciprocating Compressor Package — Full-Cycle NPD</div>
+              <div class="cs-context">Kirloskar Pneumatic · 15+ Packages · IOCL, GAIL, Thermax, HRRL, MRPL Projects</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Engineering Scope</div>
+              <div class="cs-text"><ul>
+                <li>Full-cycle design of reciprocating compressor packages from project brief to customer site commissioning</li>
+                <li>Component design: cylinder, piston, crankshaft, piston rod, cylinder casing, gland, flywheel, pulsation dampeners, intercoolers, aftercoolers</li>
+                <li>ASME Sec VIII Div 1 &amp; 2 / API 618 / EIL engineering code compliance across all documentation</li>
+                <li>P&amp;ID development, BOM creation in Oracle ERP, fabrication drawing review, vendor coordination</li>
+                <li>On-site commissioning support at 10+ customer locations within 48–72 hrs</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">20+</div><div class="impact-lbl">Packages delivered</div></div>
+                <div class="impact-cell"><div class="impact-val">&lt;2%</div><div class="impact-lbl">Design deviation rate</div></div>
+                <div class="impact-cell"><div class="impact-val">28%</div><div class="impact-lbl">Repeat failure reduction</div></div>
+                <div class="impact-cell"><div class="impact-val">EIL</div><div class="impact-lbl">Code-compliant docs, reviewed by EIL</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">ASME VIII Div 1&amp;2</span><span class="chip">API 618</span><span class="chip">EIL Codes</span><span class="chip">DFM/DFA</span><span class="chip">P&amp;ID</span><span class="chip">Oracle ERP</span><span class="chip">Commissioning</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card green">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Condensate System Product Development — Forbes Marshall</div>
+              <div class="cs-context">Forbes Marshall · IoT-Enabled Products · R&amp;D · 15+ Product Cycles · 3 Patents</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Led 15+ end-to-end NPD cycles for condensate pumps, steam traps, valves, and IoT-enabled systems with 95% on-time execution</li>
+                <li>Delivered 12–18% OPEX reduction for customers through data-driven design iteration and thermal-mechanical efficiency improvements</li>
+                <li>Filed 3 patents — 1 granted (Condensate Recovery Skid System, 2025) — demonstrating innovation at product level</li>
+                <li>Developed IoT-integrated products with sensor arrays and real-time monitoring for steam process systems</li>
+                <li>Executed 50+ component DFM/DFA redesigns reducing manufacturing defects by 20%</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label green">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">25%</div><div class="impact-lbl">Thermal-mechanical efficiency gain</div></div>
+                <div class="impact-cell"><div class="impact-val">95%</div><div class="impact-lbl">On-time product delivery</div></div>
+                <div class="impact-cell"><div class="impact-val">3</div><div class="impact-lbl">Patents filed (1 granted)</div></div>
+                <div class="impact-cell"><div class="impact-val">40%</div><div class="impact-lbl">Certification timeline acceleration</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">NPD</span><span class="chip">IoT Products</span><span class="chip">DFM/DFA</span><span class="chip">Patent Filing</span><span class="chip">ASME/IBR/CSA</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FEA TAB -->
+    <div class="tab-panel" id="tab-fea">
+      <div class="cs-grid">
+
+        <div class="cs-card">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">ASME Section VIII Design-by-Analysis — DN50 Float Trap</div>
+              <div class="cs-context">Forbes Marshall · ASME DBA · Pressure-Retaining Equipment Certification</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">Non-standard shell, cover, flange, and flat-head geometry of the DN50 float trap could not be reliably assessed using Design-by-Rule equations without major unconservative assumptions. Required formal ASME Sec VIII Div 2 Part 5 Design-by-Analysis.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Methodology</div>
+              <div class="cs-text"><ul>
+                <li>Built ANSYS Mechanical model with pressure-retaining components, bolts, contact, and bolt pre-tension</li>
+                <li>Performed mesh sensitivity, global equilibrium, and hand-calculation sanity checks</li>
+                <li>Used stress classification lines and stress linearisation to evaluate Pm, PL, Pb, and Q — not von Mises peak stress alone</li>
+                <li>Evaluated pressure, hydrotest, low-temperature service, and gasket-seating load cases</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="cs-text">Analysis demonstrated acceptable results for all documented load cases. Supported pressure-retaining design assessment, ASME U2 audit compliance, and multi-jurisdiction certification (ASME/IBR/CSA) across 30+ product variants.</div>
+            </div>
+            <div class="skills-chips"><span class="chip">ANSYS Mechanical</span><span class="chip">ASME DBA</span><span class="chip">Stress Linearisation</span><span class="chip">Bolt Pre-tension</span><span class="chip">Contact FEA</span><span class="chip">Fatigue</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Compressor Components — Structural &amp; Fatigue FEA</div>
+              <div class="cs-context">Kirloskar Pneumatic · 40+ FEA Studies · Crankshaft, Piston Rod, Cylinder Block, Base Frame</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Performed static structural and fatigue FEA on crankshafts, connecting rods, pistons, piston rods, cylinder blocks, and base frames under cyclic reciprocating loads</li>
+                <li>Investigated stress concentration at critical locations and used load-path analysis to guide geometry refinement</li>
+                <li>Applied fatigue assessment methodology and translated CAE findings into DFM design changes</li>
+                <li>Rechecked modified designs against fatigue safety margins before release to manufacturing</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">8–12%</div><div class="impact-lbl">Structural weight reduction</div></div>
+                <div class="impact-cell"><div class="impact-val">28%</div><div class="impact-lbl">Repeat prototype failure reduction</div></div>
+                <div class="impact-cell"><div class="impact-val">40+</div><div class="impact-lbl">FEA studies completed</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">Static FEA</span><span class="chip">Fatigue</span><span class="chip">Cyclic Loading</span><span class="chip">Design Optimisation</span><span class="chip">Reciprocating Machinery</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card teal">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Nonlinear Explicit FEA — SPIF of Ti-6Al-4V (M.Tech Research)</div>
+              <div class="cs-context">IIT Bhubaneswar · Abaqus/Explicit · Large Deformation · Experimental Validation</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">Single Point Incremental Forming of Ti-6Al-4V sheet involves severe nonlinear deformation, evolving tool-sheet contact with friction, and a transient prescribed tool trajectory — not representable by conventional linear FEA.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Methodology</div>
+              <div class="cs-text"><ul>
+                <li>Selected Abaqus/Explicit; defined elastic-plastic material behaviour, rigid tool motion, frictional surface contact</li>
+                <li>Compared shell vs 3D brick formulations; controlled mass scaling; monitored energy/element behaviour</li>
+                <li>Post-processed forming force, PEEQ, thickness, and contact behaviour</li>
+                <li>Compared results with physical experiments for correlation</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label teal">Outcome</div>
+              <div class="cs-text">Reproduced experimental force trends with less than 12% deviation in predicted sheet thickness — providing a validated basis for studying SPIF process behaviour.</div>
+            </div>
+            <div class="skills-chips"><span class="chip">Abaqus/Explicit</span><span class="chip">Large Deformation</span><span class="chip">Contact/Friction</span><span class="chip">Material Nonlinearity</span><span class="chip">Experimental Correlation</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CFD TAB -->
+    <div class="tab-panel" id="tab-cfd">
+      <div class="cs-grid">
+
+        <div class="cs-card">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">CFD Performance &amp; Thermal Analysis — Condensate Pumps &amp; Steam Traps</div>
+              <div class="cs-context">Forbes Marshall · ANSYS Fluent · Internal Flow · Experimental Validation</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Objective</div>
+              <div class="cs-text">Evaluate capacity and flow performance and understand mass-flow, pressure, and thermal behaviour of condensate pumps, steam traps, and heat-pump systems under defined operating conditions — with validation against physical tests.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Developed CFD models in ANSYS Fluent for product geometry and operating conditions</li>
+                <li>Performed capacity analysis, mass-flow-rate analysis, pressure-variation studies, and thermal analysis</li>
+                <li>Applied the same boundary conditions used in physical tests for direct numerical-to-experimental correlation</li>
+                <li>Used validated results to identify performance limitations and guide design iteration</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="cs-text">Validated CFD methodology established as a design decision tool, reducing reliance on costly physical prototypes. Results directly supported design improvements leading to 25% thermal-mechanical efficiency improvement.</div>
+            </div>
+            <div class="skills-chips"><span class="chip">ANSYS Fluent</span><span class="chip">Internal Flow</span><span class="chip">Thermal CFD</span><span class="chip">Capacity Analysis</span><span class="chip">CFD-to-Test Correlation</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card gold">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Transient Water Hammer Investigation &amp; Resolution</div>
+              <div class="cs-context">Forbes Marshall · ANSYS Fluent Transient · Closed Pump System · Root-Cause Analysis</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">A closed pump system incorporating pump, NRV, and valves exhibited water-hammer behaviour associated with transient pressure changes during valve/NRV operation. Root cause needed to be identified and a design change implemented.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Methodology</div>
+              <div class="cs-text"><ul>
+                <li>Performed transient flow analysis and studied pressure response vs. pump/NRV/valve operating behaviour</li>
+                <li>Used pressure-time response analysis to identify the mechanism producing hammer events</li>
+                <li>Moved from observed pressure surge to system-level understanding of pump-valve-NRV interaction</li>
+                <li>Evaluated proposed design change on transient response via simulation; validated with physical test</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="cs-text">Resolved pump-system transient-flow problem through simulation-led RCA, design modification, and experimental validation. Modified configuration showed significantly reduced water-hammer response confirmed by physical test.</div>
+            </div>
+            <div class="skills-chips"><span class="chip">Transient CFD</span><span class="chip">Water Hammer</span><span class="chip">Pump Dynamics</span><span class="chip">NRV Behaviour</span><span class="chip">Root-Cause Analysis</span><span class="chip">Experimental Validation</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card teal">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">CFD → Structural FEA → Fatigue: Rotating Blower Impeller</div>
+              <div class="cs-context">Forbes Marshall · One-Way FSI · Aerodynamic + Centrifugal Loading · High-Cycle Fatigue</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">Rotating blower impeller subjected to aerodynamic pressure and centrifugal loading at operating speed, with cyclic loading creating potential high-cycle fatigue risk at blade-root and plate-junction regions.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Methodology</div>
+              <div class="cs-text"><ul>
+                <li>Solved fluid problem in ANSYS Fluent and extracted pressure and thermal loading</li>
+                <li>Transferred loads to structural FEA model (ANSYS Mechanical) and combined with centrifugal loading</li>
+                <li>Evaluated stress concentration at blade-root/joint; applied mean/alternating stress for Goodman fatigue assessment</li>
+                <li>Interpreted result critically — not relying only on peak von Mises stress</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label teal">Outcome</div>
+              <div class="cs-text">Identified blade-root region as critical. Provided recommendations on root-fillet geometry, operating speed, material/weld considerations, and vibration monitoring based on the coupled FSI-fatigue assessment.</div>
+            </div>
+            <div class="skills-chips"><span class="chip">One-Way FSI</span><span class="chip">ANSYS Fluent</span><span class="chip">ANSYS Mechanical</span><span class="chip">Centrifugal Loading</span><span class="chip">High-Cycle Fatigue</span><span class="chip">Goodman</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PRESSURE EQUIPMENT TAB -->
+    <div class="tab-panel" id="tab-pressure">
+      <div class="cs-grid">
+
+        <div class="cs-card gold">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Pressure Vessel Design — ASME Sec VIII Div 1 &amp; 2</div>
+              <div class="cs-context">Forbes Marshall &amp; Kirloskar · PV Elite · WRC 107/537 · 20+ Certification Workflows</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Scope</div>
+              <div class="cs-text"><ul>
+                <li>Design of pulsation vessels, coolers, storage vessels, and process equipment per ASME Sec VIII Div 1</li>
+                <li>Design-by-Analysis per ASME Sec VIII Div 2 Part 5 — elastic-plastic stress evaluation and stress linearisation</li>
+                <li>Local load analysis for nozzles per WRC 107/537 for all inlet/outlet connections</li>
+                <li>Lifting lug, saddle, support design including seismic/wind analysis</li>
+                <li>Fabrication drawings with weld maps, NDT requirements, tolerances, and test documentation</li>
+                <li>U2 Stamp audit support — resolved Authorized Inspector query using PV Elite real-time without NCR</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">20+</div><div class="impact-lbl">ASME/IBR/CSA certifications</div></div>
+                <div class="impact-cell"><div class="impact-val">U2 Audit</div><div class="impact-lbl">Passed — no NCR raised</div></div>
+                <div class="impact-cell"><div class="impact-val">40%</div><div class="impact-lbl">Certification timeline reduction</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">PV Elite</span><span class="chip">ASME Sec VIII</span><span class="chip">DBA</span><span class="chip">WRC 107/537</span><span class="chip">IBR</span><span class="chip">CSA B51</span><span class="chip">U2 Stamp</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Heat Exchanger Thermal &amp; Mechanical Design — HTRI / TEMA</div>
+              <div class="cs-context">Kirloskar Pneumatic · Intercoolers, Aftercoolers, Process HX · HTRI Xist</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Scope</div>
+              <div class="cs-text"><ul>
+                <li>Thermal sizing and rating using HTRI Xist for intercoolers, aftercoolers, and process heat exchangers</li>
+                <li>Shell-side/tube-side pressure drop, bundle configuration and baffle-spacing optimisation</li>
+                <li>Flow-induced vibration assessment per Tubular Exchanger Manufacturers Association (TEMA)</li>
+                <li>Tube-sheet and mechanical design per ASME Sec VIII Div 1 and TEMA Class R requirements</li>
+                <li>Fabrication-ready drawings, BOM, and test documentation</li>
+              </ul></div>
+            </div>
+            <div class="skills-chips"><span class="chip">HTRI Xist</span><span class="chip">TEMA</span><span class="chip">ASME VIII Div 1</span><span class="chip">Flow-Induced Vibration</span><span class="chip">Tube Sheet Design</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TEST ENGINEERING TAB -->
+    <div class="tab-panel" id="tab-test">
+      <div class="cs-grid">
+
+        <div class="cs-card green">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Steam Trap Thermal-Flow Calibration Fixture</div>
+              <div class="cs-context">Forbes Marshall · ±0.02mm Repeatability · RTD + DP Integration · GD&amp;T-Controlled</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">Product validation required a stable, repeatable fixture capable of controlling geometry and measuring thermal/flow behaviour of steam traps against ASME/IBR standards — manual methods were too variable for certification-grade evidence.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Designed calibration fixture using NX with tightly controlled datum structures — 0.01 mm parallelism and perpendicularity via GD&amp;T (ASME Y14.5)</li>
+                <li>Integrated RTD-based temperature mapping, differential pressure transmitters, and kinematic mounting</li>
+                <li>Validated repeatability through tolerance stack-up simulation, CAD-thermal correlation, and prototype-to-production tests</li>
+                <li>GR&amp;R analysis to validate measurement system capability before certification use</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label green">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">±0.02mm</div><div class="impact-lbl">Measurement repeatability achieved</div></div>
+                <div class="impact-cell"><div class="impact-val">ASME/IBR</div><div class="impact-lbl">Certification-grade validation data</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">GD&amp;T</span><span class="chip">Kinematic Mounting</span><span class="chip">RTD Integration</span><span class="chip">GR&amp;R</span><span class="chip">Tolerance Stack-up</span><span class="chip">NX</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card teal">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Dynamic Valve Kinematics Test Rig — Failure Resolution</div>
+              <div class="cs-context">Kirloskar Pneumatic · Compressor Valve Lift · Displacement Sensing · FEA + Prototype</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">Recurring compressor valve leakage failures could not be explained without dynamic measurement of valve lift and timing during operation. Root cause was invisible without purpose-built instrumented test capability.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Architected dynamic valve-lift and timing validation system; modelled full kinematic chain in NX with FEA collaboration for stress-strain prediction</li>
+                <li>Developed prototype through casting, machining, and assembly operations applying DFM/DFA</li>
+                <li>Integrated displacement sensor to measure movement and piston-level position; designed fixture to separate structural vs. dynamic influences</li>
+                <li>Used mechanical filtering methods to isolate the signal of interest from noise</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label teal">Outcome</div>
+              <div class="cs-text">Identified a piston geometry defect linked to position-dependent failures — invisible without the new instrumented test. Repeat failure incidents reduced by 28% after geometry correction.</div>
+            </div>
+            <div class="skills-chips"><span class="chip">Mechanism Design</span><span class="chip">Kinematics</span><span class="chip">Displacement Sensing</span><span class="chip">DFM/DFA</span><span class="chip">Prototype Development</span><span class="chip">RCA</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DIGITAL TAB -->
+    <div class="tab-panel" id="tab-digital">
+      <div class="cs-grid">
+
+        <div class="cs-card">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Python-Based Tolerance Stack-up Simulation Tool</div>
+              <div class="cs-context">Forbes Marshall · Python + ML · 90% Calculation Time Reduction</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">Manual tolerance stack-up calculations for steam and condensate product variants consumed approximately 1 hour per study, with inconsistent methodology between engineers and limited ability to study sensitivity to individual tolerance parameters.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Built a Python-based tolerance stack-up tool incorporating Monte Carlo simulation and ML-based sensitivity analysis</li>
+                <li>Parameterised all dimensional and tolerance inputs for rapid study of different product variants</li>
+                <li>Standardised the calculation methodology and output format across the engineering team</li>
+                <li>Validated results against physical measurement data before deployment</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label gold">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">90%</div><div class="impact-lbl">Calculation time reduction (60→6 min)</div></div>
+                <div class="impact-cell"><div class="impact-val">33%</div><div class="impact-lbl">Defect prediction accuracy improvement</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">Python</span><span class="chip">Monte Carlo</span><span class="chip">ML Sensitivity</span><span class="chip">Tolerance Engineering</span><span class="chip">Engineering Automation</span></div>
+          </div>
+        </div>
+
+        <div class="cs-card green">
+          <div class="cs-header" onclick="toggleCS(this)">
+            <div>
+              <div class="cs-title">Power BI Engineering Operations Dashboard — Sandvik Coromant</div>
+              <div class="cs-context">Sandvik Coromant · Power BI + Python · 70% Reporting Time Reduction</div>
+            </div>
+            <span class="cs-chevron">›</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-section">
+              <div class="cs-label">Problem</div>
+              <div class="cs-text">Manual engineering reporting across 40+ SKU variants and 50+ production bottlenecks consumed significant engineering hours with no real-time visibility into project status, NCR trends, or milestone risk.</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label">Engineering Actions</div>
+              <div class="cs-text"><ul>
+                <li>Developed Power BI dashboards integrating real-time data from Oracle ERP and engineering tracking systems</li>
+                <li>Built Python automation scripts to process CAD outputs, BOM data, and quality metrics</li>
+                <li>Created milestone tracking, NCR trend analysis, and bottleneck flagging modules</li>
+                <li>Reduced bottleneck closure time from 10 to 4 days through visibility-driven escalation</li>
+              </ul></div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-label green">Outcome</div>
+              <div class="impact-row">
+                <div class="impact-cell"><div class="impact-val">70%</div><div class="impact-lbl">Manual reporting reduction</div></div>
+                <div class="impact-cell"><div class="impact-val">10→4 days</div><div class="impact-lbl">Bottleneck closure time</div></div>
+                <div class="impact-cell"><div class="impact-val">25%</div><div class="impact-lbl">CAD task time reduction</div></div>
+              </div>
+            </div>
+            <div class="skills-chips"><span class="chip">Power BI</span><span class="chip">Python</span><span class="chip">Oracle ERP</span><span class="chip">Process Automation</span><span class="chip">Engineering Analytics</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /container -->
+</div><!-- /section case studies -->
+
+<!-- ═══════════════════ INNOVATION ═══════════════════ -->
+<div class="section" id="innovation">
+  <div class="container">
+    <h2 class="section-title">Innovation &amp; Intellectual Property</h2>
+    <p class="section-sub">3 patents filed, 1 granted — all in industrial steam and condensate systems</p>
+    <div class="patent-grid">
+      <div class="patent-card">
+        <span class="patent-status granted">Granted — 2025</span>
+        <div class="patent-title">A Condensate Recovery Skid System</div>
+        <div class="patent-body">Granted patent for an advanced condensate recovery skid integrating modular heat recovery, condensate collection, and energy-return subsystems. Developed through ASME DBA-based design at Forbes Marshall.</div>
+      </div>
+      <div class="patent-card">
+        <span class="patent-status filed">Filed — 2025</span>
+        <div class="patent-title">A Modular Vent Head System</div>
+        <div class="patent-body">Patent filed for a modular vent head enabling flexible installation, maintenance access, and improved vapour separation in steam and condensate distribution systems.</div>
+      </div>
+      <div class="patent-card">
+        <span class="patent-status filed">Filed — 2024</span>
+        <div class="patent-title">A Method of Coating Heat Exchangers</div>
+        <div class="patent-body">Patent filed for a coating method improving corrosion resistance, thermal performance, and service life of industrial heat exchangers in process plant applications.</div>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem;background:var(--white);border:1px solid var(--border);padding:1.2rem 1.5rem;">
+      <div style="font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:6px;">Publication</div>
+      <div style="font-size:13px;color:var(--muted);">"Sustainable Materials for the Indian Industry: Now and Ahead" — peer-reviewed publication connecting materials research to industrial application in the Indian engineering context. Produced during Research Fellowship, IIT Bombay (2021–2022).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ EDUCATION ═══════════════════ -->
+<div class="section" id="education">
+  <div class="container">
+    <h2 class="section-title">Education &amp; Credentials</h2>
+    <p class="section-sub">Academic foundation and professional certifications</p>
+
+    <div class="edu-row">
+      <div class="edu-badge">IIT<br>M.Tech</div>
+      <div>
+        <div class="edu-degree">M.Tech — Manufacturing Engineering</div>
+        <div class="edu-inst">Indian Institute of Technology (IIT), Bhubaneswar</div>
+        <div class="edu-grade">CGPA 8.98 / 10.0 · 2019–2021</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6;">Thesis: Single Point Incremental Forming of Ti-6Al-4V — Abaqus/Explicit nonlinear FEA methodology with experimental validation (&lt;12% thickness deviation). Research Fellowship, IIT Bombay (2021–22) on Digital Twin and Smart Manufacturing.</div>
+      </div>
+    </div>
+    <div class="edu-row">
+      <div class="edu-badge">B.Tech</div>
+      <div>
+        <div class="edu-degree">B.Tech — Mechanical Engineering</div>
+        <div class="edu-inst">Rajarambapu Institute of Technology, Sangli (Shivaji University)</div>
+        <div class="edu-grade">CGPA 7.78 / 10.0 · 2013–2017</div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <div style="font-size:13px;font-weight:500;color:var(--navy);margin-bottom:8px;">Professional Certifications</div>
+      <div class="cert-row">
+        <span class="cert-chip">Lean Six Sigma Green Belt</span>
+        <span class="cert-chip">ANSYS Structural &amp; Thermal</span>
+        <span class="cert-chip">ASME Sec VIII Div 1 &amp; 2</span>
+        <span class="cert-chip">Python for Machine Learning</span>
+        <span class="cert-chip">Power BI</span>
+        <span class="cert-chip">IBM Product Management</span>
+        <span class="cert-chip">Design of Experiments</span>
+        <span class="cert-chip">CATIA V5</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="footer">
+  Detailed calculation reports, FEA models, validation evidence, and certification documentation available on request, subject to confidentiality constraints. &nbsp;·&nbsp; Suraj Anil Suryawanshi &nbsp;·&nbsp; <a href="mailto:surajas9598@gmail.com">surajas9598@gmail.com</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/surajas">linkedin.com/in/surajas</a>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+function toggleCS(header) {
+  const body = header.nextElementSibling;
+  const chev = header.querySelector('.cs-chevron');
+  const open = body.classList.toggle('open');
+  chev.style.transform = open ? 'rotate(90deg)' : '';
+}
+// Open first card in each panel
+document.querySelectorAll('.tab-panel').forEach(panel => {
+  const first = panel.querySelector('.cs-header');
+  if (first) { const b = first.nextElementSibling; const c = first.querySelector('.cs-chevron'); if(b && c){ b.classList.add('open'); c.style.transform='rotate(90deg)'; } }
+});
+</script>
+</body>
+</html>
